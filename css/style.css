@@ -1,0 +1,650 @@
+/* Variáveis */
+:root {
+    --primary-color: #000000;
+    --secondary-color: #FF0000;
+    --accent-color: #333333;
+    --text-color: #FFFFFF;
+}
+
+/* Estilos Gerais */
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+    background: linear-gradient(180deg, #000000 0%, #1a0000 70%, #330000 100%);
+    padding-top: 110px;
+}
+
+/* Navbar simplificada */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.95) !important;
+    border-bottom: 1px solid rgba(255, 0, 0, 0.1);
+    padding: 10px 0;
+    height: 110px;
+}
+
+.navbar-brand {
+    transition: transform 0.3s ease;
+    margin-bottom: 0;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+/* Hero Section */
+#hero {
+    background: none;
+    padding: 120px 0;
+}
+
+.hero-gradient-text {
+    background: linear-gradient(45deg, #FFFFFF, #FF0000);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 800;
+}
+
+/* Produtos */
+.product-card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, rgba(0,0,0,0.9), rgba(20,20,20,0.9));
+    border: 1px solid rgba(255,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--secondary-color);
+}
+
+.product-card .card-body {
+    color: var(--text-color);
+}
+
+.price {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Botões */
+.btn-primary {
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary:hover {
+    background-color: #cc0000;
+    transform: translateY(-2px);
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.btn-primary:hover::after {
+    left: 100%;
+}
+
+/* Seções */
+section {
+    position: relative;
+}
+
+.section-title {
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50%;
+    height: 3px;
+    background: var(--secondary-color);
+}
+
+/* WhatsApp Button */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+    color: white;
+    background-color: #20ba57;
+}
+
+/* Newsletter */
+.newsletter-section {
+    background: linear-gradient(45deg, #000000, #330000);
+}
+
+.form-control {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    color: var(--text-color);
+    border-radius: 0;
+}
+
+.form-control:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+/* Nova seção Loja Física */
+.store-section {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.store-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255, 0, 0, 0.1), transparent);
+    z-index: 1;
+}
+
+.store-content {
+    position: relative;
+    z-index: 2;
+}
+
+.store-image {
+    border: 2px solid var(--secondary-color);
+    transition: transform 0.3s ease;
+}
+
+.store-image:hover {
+    transform: scale(1.02);
+}
+
+.store-features {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-left: 3px solid var(--secondary-color);
+}
+
+.store-feature-item {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.store-feature-item i {
+    color: var(--secondary-color);
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* Estilo para as categorias de produtos */
+.category-header {
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.category-header .lead {
+    color: #cccccc;
+    font-size: 1.1rem;
+    margin-top: 15px;
+}
+
+/* Badge para TOP produtos */
+.product-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: linear-gradient(45deg, var(--secondary-color), #ff4444);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    z-index: 2;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Melhorias nos cards de produtos */
+.product-card img {
+    transition: transform 0.5s ease;
+    height: 250px;
+    object-fit: cover;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+.product-card .card-body {
+    padding: 1.5rem;
+}
+
+.product-card .card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.product-card .card-text {
+    color: #cccccc;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* Seção com background gradiente */
+.bg-gradient {
+    background: linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(20,0,0,0.95) 100%);
+}
+
+/* Animação hover nos botões */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.btn-primary:hover::after {
+    left: 100%;
+}
+
+/* Estilos para o banner de promoção */
+.promo-banner {
+    background: linear-gradient(90deg, var(--secondary-color), #cc0000);
+    color: white;
+    padding: 8px 0;
+    position: fixed;
+    width: 100%;
+    top: 110px;
+    z-index: 999;
+    animation: slideDown 0.5s ease;
+}
+
+.promo-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-weight: 600;
+}
+
+.promo-timer {
+    background: rgba(0,0,0,0.2);
+    padding: 3px 10px;
+    border-radius: 4px;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+/* Estilos para os depoimentos */
+.testimonials-section {
+    background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('../img/bg-testimonials.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.testimonial-card {
+    background: rgba(255,255,255,0.05);
+    padding: 30px;
+    margin: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid rgba(255, 0, 0, 0.1);
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.testimonial-name {
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.testimonial-rating {
+    color: #FFD700;
+}
+
+/* Botão Voltar ao Topo */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 45px;
+    height: 45px;
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    background: #cc0000;
+}
+
+/* Chat Widget */
+.chat-widget {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    z-index: 998;
+}
+
+.chat-toggle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    border: none;
+    color: white;
+    position: relative;
+}
+
+.chat-notification {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #fff;
+    color: var(--secondary-color);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-box {
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    width: 300px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: none;
+}
+
+.chat-header {
+    background: var(--secondary-color);
+    color: white;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-messages {
+    padding: 15px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Adicionar estilos para o título da marca */
+.brand-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.brand-text {
+    margin-top: 5px;
+}
+
+.brand-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 0;
+    background: linear-gradient(45deg, #FFD700, #FFF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    letter-spacing: 2px;
+}
+
+.brand-subtitle {
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    body {
+        padding-top: 100px;
+    }
+    
+    .navbar {
+        height: 100px;
+    }
+    
+    .brand-title {
+        font-size: 1.5rem;
+    }
+    
+    .brand-subtitle {
+        font-size: 0.7rem;
+    }
+}
+
+/* Estilos do Footer */
+.footer {
+    background: linear-gradient(180deg, #000000, #1a0000);
+    padding: 60px 0 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+}
+
+.footer-title {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--secondary-color);
+}
+
+.footer-text {
+    color: #999;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.contact-info {
+    margin-top: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contact-item i {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    width: 30px;
+}
+
+.contact-item p {
+    color: #999;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: var(--secondary-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.copyright {
+    text-align: center;
+    color: #666;
+    font-size: 0.85rem;
+}
+
+/* Responsividade do Footer */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 0 20px;
+    }
+    
+    .footer-about,
+    .footer-contact,
+    .footer-social {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    .footer-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .contact-item {
+        justify-content: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}
+
+/* Adicionar estilos para os créditos do desenvolvedor */
+.developer-credits {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.developer-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.developer-link:hover {
+    color: #fff;
+}
+
+.developer-link i {
+    margin: 0 5px;
+    font-size: 0.9rem;
+} 
